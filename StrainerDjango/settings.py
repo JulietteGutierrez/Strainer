@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['juligutierrez.pythonanywhere.com']
 
 
 # Application definition
@@ -73,7 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'publica.context_processor.importe_total_carrito', 
+                'publica.context_processor.importe_total_carrito',
             ],
         },
     },
@@ -143,8 +143,8 @@ STATICFILES_DIRS = [
 ]
 
 
-#esto se genera en producción y es la que deberemos 
-#crear y django ira a buscar ahi 
+#esto se genera en producción y es la que deberemos
+#crear y django ira a buscar ahi
 #python manage.py collectstatic
 STATIC_ROOT = BASE_DIR / 'static_root'
 
@@ -177,4 +177,3 @@ mensajes_de_error.ERROR:'danger',
 }
 
 AUTH_USER_MODEL ='autenticacion.Usuario'
-
