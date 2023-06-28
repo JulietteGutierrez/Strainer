@@ -1,0 +1,26 @@
+/*@import url('http://fonts.cdnfonts.com/css/gotham');*/
+
+/*Font Type*/
+@font-face {
+    font-family: 'gothamblack';
+    src: url('./gotham-black-webfont.woff2') format('woff2'),
+         url('./gotham-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothammedium';
+    src: url('./gothammedium-webfont.woff2') format('woff2'),
+         url('./gothammedium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothambold';
+    src: url('./gotham-bold-webfont.woff') format('woff2'),
+         url('./gotham-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,47 @@
+{% extends './base.html' %} 
+
+{%load static %}
+{% comment %} {% load active_link_tags %} {% endcomment %}
+
+{% block titulo %}Strainer Coffee{% endblock titulo %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'publica/css/principal.css'%}?v={% now 'U' %}">
+<link rel="stylesheet" href="{% static 'publica/css/styles.css'  %}?v={% now 'U' %}"/>
+{% endblock css %}
+
+
+{% block title2 %}Strainer Coffee{% endblock title2 %}
+{% block subtitle %}A new way of drinking coffee{% endblock subtitle %}
+
+{% block contenido %}
+    <div class="contenido-ppal">
+        <section class="index-container">
+            <div class="presentacion">
+                <h2>¿Qué es el café de Especialidad?</h1>
+                <p>El café de Especialidad es aquel que cumple con una trazabilidad desde la planta a la taza, cuidando y valorando todo lo que sucede durante ese recorrido. Según la SCAA (Specialty Coffee Asotiation of America), el mismo debe tener un puntaje mínimo de 80/100 en una evaluación hecha por un catador certificado.  En esta cata (llamada “cupping”) se controla la calidad del grano verde, sus atributos sensoriales y su resultado en taza. 
+                    Éste proceso define de manera estricta si un café es de especialidad o no. Todos los cafés que trabajamos en <em>Strainer</em> son de especialidad.
+                </p>
+            </div>
+            <img class="multimedia foto-soporte" src="{%static 'publica/assets/img/fotos/soporte.png' %}">
+        </section>
+        
+        <br>
+        
+        <section class="index-container">
+            <video class="multimedia" src="{%static 'publica/assets/videos/soporte.mov' %}" muted autoplay controls alt="Tu navegador no soporta este tipo de videos"></video>
+            <div class="presentacion">
+                <h2>¿Cómo prepararlo?</h2>
+                <ol class="instrucciones">
+                    <li>Retirar el troquel por la línea punteada.</li>
+                    <li>Abrir el soporte desde sus alas y colocarlo sobre la taza de modo que encastre perfecto y no se mueva.</li>
+                    <li>Verter agua caliente a 90° (hasta 200 ml).</li>
+                    <li>Ahora si! A disfrutar de un rico café.</li>
+                    <li>Compostar la bolsa contenedora y el café, reciclar el soporte, y el sticker podes pegarlo donde quieras!.</li>
+                </ol>
+            </div>
+        
+        </section>
+
+    </div>
+{% endblock contenido %}

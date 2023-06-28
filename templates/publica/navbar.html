@@ -1,0 +1,48 @@
+{%load static %}
+
+<nav class="top-nav navbar navbar-expand-lg navbar-light">
+  <a href="./">
+    <img class="logo-top-nav" src="{% static 'publica/assets/img/logo/logo3_3.png' %}" alt="Strainer Coffee"/>
+  </a>
+  <input type="checkbox" id="menu" />
+    <label for="menu" class="menu-label"> ☰ </label> 
+
+    <ul class="top-nav-buttons navbar-nav">
+      <li class="nav-item {{ index }}">
+        <a class="nav-link" class="active" href="{% url 'inicio' %}">Inicio</a>
+      </li>
+      <li class="nav-item {{ origenes }}">
+        <a class="nav-link" href="{% url 'origenes' %}">Origenes</a>
+      </li>
+      <li class="nav-item {{ tienda }}">
+        <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
+      </li>
+      <li class="nav-item {{ sucursales }}">
+        <a class="nav-link" href="{% url 'sucursales' %}">Sucursales</a>
+      </li>
+      <li class="nav-item {{ contacto }}">
+        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+      </li> 
+      {% if user.is_authenticated %}
+      <li class="nav-item {{ registro }}">
+        <a class="nav-link">Hola {{user.username}}</a>
+      </li>   
+      <li class="nav-item {{ cerrar_sesion }}">
+        <a class="nav-link" href="{% url 'cerrar_sesion'%}" >Cerrar sesion</a>
+      </li> 
+      {% else %}
+      <li class="nav-item {{ registro }}">
+        <a class="nav-link" href="{% url 'logear'%}" >Login</a>
+      </li> 
+      <li class="nav-item {{ cerrar_sesion }}">
+        <a class="nav-link" href="{% url 'Autenticacion' %}" >Registrate</a>
+      {% endif %}
+      </li>
+    </ul>
+  
+
+
+
+
+
+</nav> 

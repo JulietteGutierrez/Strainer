@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Hola {{nombreusuario}}<br/>
+  Nº de pedido: {{pedido.id}}<br/>
+  Email del usuario: {{email_usuario}}<br/>
+  <table>
+    <thead>
+      <th>
+          <tr>
+            <th colspan="3">Su Pedido</th>
+          <tr>              
+          <th>Cantidad</th>
+          <th>Producto</th>
+          <th>Precio</th>
+      </th>
+    </thead>
+    <tbody>
+      {% for linea in lineas_pedido %}        
+      <tr>
+        <td>{{linea.cantidad|floatformat:"0"|rjust:"5"|ljust:"10"}}</td>
+        <td>{{linea.producto.nombre|ljust:"80"}}</td>
+        <td>$ {{linea.producto.precio|rjust:"50"|floatformat:"2g"}}</td>
+      </tr>
+      {%endfor%}
+      <tr>
+        <td>{{" "|ljust:"10"}}</td>
+        <td>{{"TOTAL"|ljust:"80"}}</td>
+        <td>$ {{total.importe_total_carrito|floatformat:"2g"|rjust:"15"}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends '../publica/base.html' %} 
+{% load static %}
+{% comment %} {% load crispy_forms_tags %}  {% endcomment %}
+{% block titulo %} Registro {% endblock titulo %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'publica/css/contacto.css'%}?v={% now 'U' %}"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+{% endblock css %}
+
+
+
+{% block contenido %}
+{% comment %} {% load crispy_forms_tags %}  {% endcomment %}
+
+<form method="post" action="">
+    {% csrf_token %}
+    <div class="contenedor">
+        {% comment %} => intentando mostrar un cartelito que aun no funciona {% endcomment %}
+        
+        {% if messages %} 
+        {% for mensaje in messages %}
+            <span class="alert alert-{{mensaje.tags}}"> {{mensaje}} </span>
+            
+        {% endfor %}
+
+        {% endif %} 
+        {{ form.as_p }}
+        {% comment %} {{ form }} {% endcomment %}
+
+    <input type="submit" class="btn btn-success">Login</button>
+    </div>
+</form>  
+
+{% endblock contenido %}

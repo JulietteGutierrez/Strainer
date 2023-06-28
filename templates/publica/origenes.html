@@ -1,0 +1,27 @@
+{% extends './base.html' %} 
+{%load static %}
+
+{% block titulo %}Orígenes{% endblock titulo %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'publica/css/origenes.css'%}?v={% now 'U' %}">
+
+{% endblock css %}
+
+{% block title2 %}Orígenes{% endblock title2 %}
+{% block subtitle %}Nuestros blends{% endblock subtitle %}
+
+{% block contenido %}
+    <div class="contenido-ppal">
+        <div class="blends-container">
+            <div class="blend1">
+                <img class="blend--img" src="{%static 'publica/assets/img/blends/blend_braco.jpg' %}"  width=45% alt="Blend Braco">
+            </div>
+            <div class="blend2">
+                <img class="blend--img" src="{%static 'publica/assets/img/blends/blend_g2.jpg' %}"  width=45%  alt="Blend G2">
+            </div>
+        </div>
+    </div>
+<!--<aside></aside>-->
+{% endblock contenido %}
+

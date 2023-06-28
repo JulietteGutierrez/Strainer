@@ -1,0 +1,40 @@
+{% extends './base.html' %}
+{%load static %}
+
+{% block titulo %}Dónde encontrarnos{% endblock titulo %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'publica/css/sucursales.css'%}?v={% now 'U' %}">
+
+{% endblock css %}
+
+{% block menu %}
+<li><a href="{% url 'inicio' %}">Inicio</a></li>
+<li><a href="{% url 'origenes' %}">Orígenes</a></li>
+<li><a href="{% url 'tienda-online' %}">Tienda Online</a></li>
+<li><a href="{% url 'sucursales' %}" class="lnkactive">Dónde encontrarnos</a></li>
+<li><a href="#">Contacto</a></li>
+{% endblock %}
+
+{% block title2 %}Donde encontrarnos{% endblock title2 %}
+{% block subtitle %}Nuestras sucursales{% endblock subtitle %}
+
+{% block contenido %}
+    <div class="contenido-ppal">
+        <section class="sucursales-container">
+            <article class="sucursal">
+                <h2>FullCity Coffee House </h2>
+                <p>Thames 1535, CABA</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13138.473223536104!2d-58.4316404!3d-34.5885234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1de05b8517b697b8!2sFull%20City%20Coffee%20Roasters!5e0!3m2!1sen!2sar!4v1663888409046!5m2!1sen!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </article>
+                    
+
+            <article class="sucursal">
+                <h2>Vitalcer</h2>
+                <p>Av Rivadavia 6350, CABA</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.115695847501!2d-58.45797868505155!3d-34.626516466211235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca25b5e966c7%3A0x17cfea4674ce4bfd!2sRivadavia%206350%2C%20C1406%20GLT%2C%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1663888684255!5m2!1sen!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </article>
+        </section>
+    </div>
+<!--<aside></aside>-->
+{% endblock contenido %}

@@ -1,0 +1,127 @@
+/************************* Filtros **********************/
+
+.with-sidebar{
+    margin: 0 1em;
+    display: grid;
+    grid-template-areas: "filtros content"
+                         "carrito content";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 7fr;
+    margin-right: 0; /*Esto esta para que la scroll bar quede pegada al borde derecho.
+    Ante cualquier problema relacionado, sacar*/
+}
+
+.contenedor-filtros{
+    grid-area: filtros;
+}
+
+.btn-strainer{
+    background-color: #f0a046;
+    color: white;
+    padding: 5px 8px 0px;
+    border-radius: 5px !important;
+    box-sizing: border-box;
+    border: 0;
+}
+
+.btn-strainer:hover{
+    animation: shadow-pulse 1000ms 1;
+    background-color: #20e2d7;
+    color: #434343;
+}
+
+/************************* Grilla Productos **********************/
+
+.content{
+    grid-area: content;
+    height: inherit;
+    overflow: auto;
+}
+
+.contenedor-productos{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5em, 10em));
+    gap: 1em;
+}
+
+.producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: inherit;
+    background-color: #ffffff;
+    border: solid #eaeaea 1px;
+    color: #000;
+}
+
+.producto a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.box-img{
+    height: 6.25em;
+    width: 6.25em;
+    border-radius: 100%;
+    object-fit: contain;
+    overflow: hidden;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+
+.box-img:hover{
+    transform: scale(1.3,1.3);
+}
+
+.producto--img{
+    height: inherit;
+}
+
+.producto--datos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-height: inherit;
+}
+
+.producto--datos h3{
+    margin-bottom: 0;
+}
+
+.producto--nombre{
+    font-size: 1em;
+    text-align: center;
+    max-height: 2em;
+    font-size: medium;
+
+    line-height: 1em;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    max-height: inherit;
+}
+
+/************************* Seteos Responsive **********************/
+
+@media (max-width: 768px){
+    .with-sidebar{
+        display: block;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .contenedor-productos{
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+
+ /*
+.coffee-header1{
+    background-size: contain;
+   background-image: url(../assets/img/fotos/Foto1.jpeg); 
+}*/

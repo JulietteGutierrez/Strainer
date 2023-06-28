@@ -1,0 +1,107 @@
+/*@import url('../css/styles.css' ); 
+
+main{
+    overflow-x: hidden;
+}
+*/
+.contenedor{
+    width: 70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card{
+    padding: 30px 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none !important;
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(97, 75, 75, 0.5)
+    ), url('../assets/img/fotos/granosCafe.jpeg');
+
+}
+
+.form-control-label{
+    margin-bottom: 0
+}
+input, textarea{
+    padding: 8px 15px;
+    border-radius: 5px !important;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    font-size: 18px !important;
+    font-weight: 300
+}
+input:focus, textarea:focus{
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #00BCD4;
+    outline-width: 0;
+    font-weight: 400
+}
+button:focus{
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+label, h2{
+    font-family: gothambold;
+    /* color: aliceblue; */
+}
+span .text-danger{
+    color: red;
+    font-weight: 900;
+}
+
+.btn-strainer{
+    background-color: #f0a046;
+    padding: 8px 15px;
+    border-radius: 5px !important;
+    margin: 15px 0px;
+    box-sizing: border-box;
+    font-size: 18px !important;
+    font-weight: 300;
+    font-family: gothambold;
+    border: 0;
+}
+
+
+
+.btn-strainer:hover{
+    animation: shadow-pulse 1000ms 1;
+    background-color: #20e2d7;
+    color: #434343;
+}
+
+.errorlist{
+    color: red;
+    font-size:larger;
+}
+
+/*
+@media only screen and (min-width: 768px) {
+
+    nav.top-nav .menu-label {
+        display: none;
+    }
+}
+  */
+@keyframes shadow-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(32, 226, 215, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 8px 16px rgba(32, 226, 215, 0);
+    }
+  }
+
+
+  .text-center{
+    color: white;
+}

@@ -1,0 +1,49 @@
+.index-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    justify-content: space-around;
+}
+
+.presentacion{
+    text-align: center; 
+    font-size: larger;
+    font-family: 'gothambold';    
+    width: 40em;
+    background-color:rgba(255,255,255,0.5); /* rgba(233, 159, 36, 0.3);*/
+}
+
+.multimedia{
+    width: 21em;
+}
+
+.instrucciones{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;  
+    color: black; 
+    font-size: larger;
+}
+
+.foto-soporte:hover{
+    transform: rotate(-10deg);
+    
+}
+
+.presentacion:hover{
+    font-weight: bold;
+}
+
+@media (max-width: 764px){
+    .presentacion p{
+        text-align: justify;
+        padding: 10px;
+    }
+}
+@media (max-width:328px){
+    .presentacion, .multimedia{
+        width: 90%;
+    }
+}
+

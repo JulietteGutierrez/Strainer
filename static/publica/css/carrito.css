@@ -1,0 +1,34 @@
+/************************* Grilla Carrito **********************/
+
+.contenedor-carrito{
+  grid-area: carrito;
+  /* border: 1px dashed red; */
+  padding-right: 10px;
+  /* background-color: red; */
+}
+
+.carrito--titulo{
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.carrito--cantidad--num{
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: baseline;
+  justify-content:center;
+  }
+
+.carrito--cantidad--accion{
+  text-align: center;
+  color: black;
+  background-color: whitesmoke;
+}
+
+.carrito--total{
+  text-align: center;
+  background-color: whitesmoke;
+  font-size: larger;
+  font-weight: bold;
+}
