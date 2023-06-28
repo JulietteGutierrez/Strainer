@@ -22,6 +22,6 @@ urlpatterns = [
     path('',include('publica.urls')),
     path('autenticacion/',include('autenticacion.urls')),        
     path('pedidos/',include('pedidos.urls')),
-    path('api-auth/', include('rest_framework.urls'))
+    #path('api-auth/', include('rest_framework.urls'))
 ]
 
