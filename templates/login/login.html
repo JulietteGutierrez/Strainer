@@ -13,25 +13,36 @@
 
 
 {% block contenido %}
-{% comment %} {% load crispy_forms_tags %}  {% endcomment %}
 
 <form method="post" action="">
     {% csrf_token %}
     <div class="contenedor">
-        {% comment %} => intentando mostrar un cartelito que aun no funciona {% endcomment %}
-        
-        {% if messages %} 
+        {% if messages %}
         {% for mensaje in messages %}
-            <span class="alert alert-{{mensaje.tags}}"> {{mensaje}} </span>
-            
+        <span class="alert alert-{{mensaje.tags}}"> {{mensaje}} </span>
         {% endfor %}
-
-        {% endif %} 
-        {{ form.as_p }}
-        {% comment %} {{ form }} {% endcomment %}
-
-    <input type="submit" class="btn btn-success">Login</button>
+        {% endif %}
+        <div class="form-group">
+            <label for="id_username" class="label">Nombre de usuario:</label>
+            <div class="field">
+                {{ form.username }}
+                {% if form.username.errors %}
+                <span class="error">{{ form.username.errors }}</span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="id_password" class="label">Contraseña:</label>
+            <div class="field">
+                {{ form.password }}
+                {% if form.password.errors %}
+                <span class="error">{{ form.password.errors }}</span>
+                {% endif %}
+            </div>
+        </div>
+        <input type="submit" class="btn btn-success" value="Login">
     </div>
-</form>  
+</form>
+
 
 {% endblock contenido %}
