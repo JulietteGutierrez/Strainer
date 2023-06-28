@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'publica',
     'autenticacion',
     'pedidos',
-    'rest_framework',
+    #'rest_framework',
     # 'crispy_forms',
     # 'crispy_bootstrap4',
 ]
