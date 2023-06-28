@@ -206,16 +206,17 @@ def getProducto(id):
     productos = (('Soporte Individual', 300, 5, 'soporte-bg.png', "Un Soporte Individual con Blend de café a elección."),
                  ('Pack Strainer x3 ', 850, 4, 'pack-bg.png', "Pack de tres soportes de café con Blend a elección."),
                  ('Pack Strainer x6', 1650, 4, 'pack2.png', "Pack de seis soportes de café con Blend a elección."),
-                 ('Taza Strainer', 1700, 3, 'taza2.png', "Taza con el diseño de Gatito Strainer Coffee."),
-                 ('Cafetera Dolce Gusto', 24000,  1, 'cafetera-dolce.webp', "Cafetera para cápsulas de café Dolce Gusto"),
-                 ('Cafetera Oyster', 39000,  1, 'cafetera-oster.webp', "Cafetera para café espresso Oyster."),
-                 ('Cápsulas Dolce Gusto Chococino', 2700, 2, 'capsulas-chococino.webp', "Cápsulas de café Dolce Gusto, sabor Chocochino."),
-                 ('Cápsulas Dolce Gusto Lungo', 2700, 2, 'capsulas-lungo.webp', "Cápsulas de café Dolce Gusto, sabor Lungo."),
-                 ('Cápsulas Dolce Gusto Café con Leche', 2700, 2, 'capsulas-cafeconleche.webp', "Cápsulas de café Dolce Gusto, sabor Café con Leche"),
-                 ('Remera Vaso', 2700, 3, 'remera-vaso.webp', "Remera de Strainer con el diseño Vaso."),
-                 ('Remera Astronauta Luna', 2700, 3, 'remera-astronauta-luna.webp', "Remera de Strainer con el diseño Astronauta."),
-                 ('Remera Astronauta Taza', 2700, 3, 'remera-astronauta-cafe.webp', "Remera de Strainer con el diseño de Taza y Astronauta."),
-                 ('Remera Casa Cafetera', 2700, 3, 'remera-casa.webp', "Remera de Strainer con el diseño de Cafetera."))
+                 ('Taza Strainer', 1700, 3, 'taza2.png', "Taza con el diseño de Gatito Strainer Coffee.")
+                # ('Cafetera Dolce Gusto', 24000,  1, 'cafetera-dolce.webp', "Cafetera para cápsulas de café Dolce Gusto"),
+                # ('Cafetera Oyster', 39000,  1, 'cafetera-oster.webp', "Cafetera para café espresso Oyster."),
+                # ('Cápsulas Dolce Gusto Chococino', 2700, 2, 'capsulas-chococino.webp', "Cápsulas de café Dolce Gusto, sabor Chocochino."),
+                # ('Cápsulas Dolce Gusto Lungo', 2700, 2, 'capsulas-lungo.webp', "Cápsulas de café Dolce Gusto, sabor Lungo."),
+                # ('Cápsulas Dolce Gusto Café con Leche', 2700, 2, 'capsulas-cafeconleche.webp', "Cápsulas de café Dolce Gusto, sabor Café con Leche"),
+                # ('Remera Vaso', 2700, 3, 'remera-vaso.webp', "Remera de Strainer con el diseño Vaso."),
+                # ('Remera Astronauta Luna', 2700, 3, 'remera-astronauta-luna.webp', "Remera de Strainer con el diseño Astronauta."),
+                #('Remera Astronauta Taza', 2700, 3, 'remera-astronauta-cafe.webp', "Remera de Strainer con el diseño de Taza y Astronauta."),
+                #('Remera Casa Cafetera', 2700, 3, 'remera-casa.webp', "Remera de Strainer con el diseño de Cafetera.")
+                )
 
     if (id > 0) and (id <= len(productos)):
         return tuple((id, productos[id-1][0], productos[id-1][1], productos[id-1][2], productos[id-1][3], productos[id-1][4]))
