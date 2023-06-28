@@ -10,21 +10,27 @@
 
 {% endblock css %}
 
-
+{% block title2 %} Registrate {% endblock title2 %}
+{% block subtitle %} {% endblock subtitle %}
 
 {% block contenido %}
-{% comment %} {% load crispy_forms_tags %}  {% endcomment %}
-<div class="contenedor">
-<form method="post" action="">
-    {% csrf_token %}
-    
-       
-        {{ form.as_p }}  
-        {% comment %} {{ form }} {% endcomment %}
-
-    <input type="submit" class="btn btn-success"></button>
-    
-</form>
-</div>  
-
+<div class="registro">
+    <form method="post" action="">
+        {% csrf_token %}
+        
+        {% for field in form %}
+            <div class="form-row">
+                <div class="label">{{ field.label_tag }}</div>
+                <div class="field">
+                    {{ field }}
+                    {% if field.help_text %}
+                        <span class="help-text">{{ field.help_text }}</span>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        
+        <input type="submit" class="btn btn-success">
+    </form>
+</div>
 {% endblock contenido %}
