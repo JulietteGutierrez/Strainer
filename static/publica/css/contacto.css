@@ -149,5 +149,30 @@ span .text-danger{
 }
 
 
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Espacio entre las filas, ajusta según tus necesidades */
+}
+
+.label {
+    width: 200px; /* Ancho de la columna del texto, ajusta según tus necesidades */
+    text-align: right;
+    margin-right: 10px; /* Espacio entre el texto y el campo, ajusta según tus necesidades */
+}
+
+.field {
+    flex: 1; /* Ocupa el espacio restante en la fila */
+    text-align: left;
+}
+
+.error {
+    color: red; /* Puedes cambiar el color según tu preferencia */
+}
+
+
+
 
 

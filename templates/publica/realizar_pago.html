@@ -1,0 +1,50 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block titulo %} Finalizar Compra {% endblock titulo %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'publica/css/contacto.css'%}?v={% now 'U' %}">
+<link rel="stylesheet" href="{% static 'publica/css/realizar_pago.css'%}?v={% now 'U' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+{% endblock css %}
+
+{% block title2 %} Finalizar Compra {% endblock title2 %}
+{% block subtitle %}  {% endblock subtitle %}
+
+{% block contenido %}
+<div class="registro">
+    <h3>Hola <b>{{ nombreusuario }}</b>! <br/></h3>
+
+    <h2>Tu compra:</h2>
+    <div class="form-row">
+        <ul>
+    
+        {% for linea in lineas_pedido %}
+            <li>
+                {{ linea.cantidad }} {{ linea.producto.nombre }}, Precio: ${{ linea.producto.precio }} 
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Mostrar el valor total de la compra -->   
+    <h2>Valor total: ${{ valor_total }}</h2>   
+
+    <div id="wallet_container"></div>
+        <script>
+            const mp = new MercadoPago("{{ public_key }}");
+            const bricksBuilder = mp.bricks();
+           
+            mp.bricks().create("wallet", "wallet_container", {
+            initialization: {
+                preferenceId: "{{ preference_id }}",
+            }
+            });
+        </script>
+       
+</div>
+{% endblock contenido %}
+
+

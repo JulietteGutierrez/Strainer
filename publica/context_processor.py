@@ -21,4 +21,20 @@ def importe_total_carrito(request):
            
     # return {"importe_total_carrito":total}
 
+def importe_total_carrito_centavos(request):
+    total = 0.0
+
+    try:
+        carrito = request.session.get("carrito", {})
+        for key, value in carrito.items():
+            cantidad = value.get("cantidad", 0)
+            precio = value.get("precio", 0.0)
+            subtotal = cantidad * float(precio)
+            total += subtotal
+    except:
+        total = 0.0
+
+    total_en_centavos = int(total * 100)  # Convertir a centavos como entero
+
+    return total_en_centavos
 

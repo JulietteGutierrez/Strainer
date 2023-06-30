@@ -8,9 +8,8 @@ from django.core.mail import send_mail
 from publica.carrito import Carrito
 from pedidos.models import LineaPedido, Pedido
 from publica.models import Producto
-from publica.context_processor import importe_total_carrito #no funciona!!
-
-
+from publica.context_processor import importe_total_carrito_centavos
+import mercadopago
 import environ
 
 env = environ.Env()
@@ -19,33 +18,64 @@ environ.Env.read_env()
 
 @login_required(login_url='/autenticacion/logear')
 def procesar_pedido(request):
-    pedido=Pedido.objects.create(user=request.user) # damos de alta un pedido
-    carrito=Carrito(request)  # Tenemos el carrito
-    lineas_pedido=list()  # lista con los pedidos para recorrer los elementos del carro
-    for key, value in carrito.carrito.items(): #recorremos el carro con sus items
+    pedido = Pedido.objects.create(user=request.user)
+    carrito = Carrito(request)
+    lineas_pedido = []
+    total = importe_total_carrito_centavos(request)/100.
+    env = environ.Env()
+    environ.Env.read_env()
+    token=env("ACCESS_TOKEN")
+    public_key=env("PUBLIC_KEY")
+
+
+    for key, value in carrito.carrito.items():
         lineas_pedido.append(LineaPedido(
             producto_id=key,
             cantidad=value['cantidad'],
             user=request.user,
-            pedido=pedido                 
-            ))
+            pedido=pedido
+        ))
 
-    LineaPedido.objects.bulk_create(lineas_pedido) # crea registros en BBDD en paquete
-    #enviamos mail al cliente
+    LineaPedido.objects.bulk_create(lineas_pedido)
+
+    productos = [linea.producto for linea in lineas_pedido]
+ 
     enviar_mail(
         pedido=pedido,
         lineas_pedido=lineas_pedido,
         nombreusuario=request.user.username,
         email_usuario=request.user.email,
-    
-        total=importe_total_carrito(request)
+        total=total
     )
-    
-    # messages.success(request, "El pedido se ha creado correctamente")
-    
-    return redirect('../tienda')
-    #return redirect('listado_productos')
-    #return render(request, "tienda/tienda.html",{"productos":productos})
+
+    sdk = mercadopago.SDK(token)
+
+    preference_data = {
+        "items": [
+            {
+                "title": "Tu compra en Strainer Coffee",
+                "total_amount": total,
+                "currency_id": "ARS",
+                "quantity": 1,
+                "unit_price": total,
+            }
+        ],
+     }
+
+    preference_response = sdk.preference().create(preference_data)
+    preference = preference_response["response"]
+    preference_id = preference_response['response']['id']    
+    productos = request.session.pop('productos', [])
+      
+    return render(request, "publica/realizar_pago.html", {
+        "productos": productos,
+        "preference": preference,
+        "preference_id": preference_id,
+        "nombreusuario": request.user.username,
+        "valor_total": total,
+        "lineas_pedido": lineas_pedido,
+        "public_key": public_key
+    })
     
 def enviar_mail(**kwargs):
     asunto="Gracias por el pedido"
