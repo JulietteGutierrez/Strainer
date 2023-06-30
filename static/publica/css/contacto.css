@@ -4,62 +4,71 @@ main{
     overflow-x: hidden;
 }
 */
-.contenedor{
-    width: 70%;
-    display:flex;
+.contenedor {
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-.card{
+  }
+  
+  .card {
     padding: 30px 40px;
     margin-top: 60px;
     margin-bottom: 60px;
     border: none !important;
-    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
     background: linear-gradient(
         rgba(0, 0, 0, 0.5),
         rgba(97, 75, 75, 0.5)
-    ), url('../assets/img/fotos/granosCafe.jpeg');
-
-}
-
-.form-control-label{
-    margin-bottom: 0
-}
-input, textarea{
+      ),
+      url('../assets/img/fotos/granosCafe.jpeg');
+  }
+  
+  .form-control-label {
+    margin-bottom: 0;
+  }
+  
+  input,
+  textarea {
     padding: 8px 15px;
     border-radius: 5px !important;
     margin: 5px 0px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     font-size: 18px !important;
-    font-weight: 300
-}
-input:focus, textarea:focus{
+    font-weight: 300;
+    width: 100%;
+  }
+  
+  input:focus,
+  textarea:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #00BCD4;
+    border: 1px solid #00bcd4;
     outline-width: 0;
-    font-weight: 400
-}
-button:focus{
+    font-weight: 400;
+  }
+  
+  button:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    outline-width: 0
-}
-label, h2{
+    outline-width: 0;
+  }
+  
+  label,
+  h2 {
     font-family: gothambold;
-    /* color: aliceblue; */
-}
-span .text-danger{
+  }
+  
+  span .text-danger {
     color: red;
     font-weight: 900;
-}
-
-.btn-strainer{
+  }
+  
+  .btn-strainer {
     background-color: #f0a046;
     padding: 8px 15px;
     border-radius: 5px !important;
@@ -69,110 +78,129 @@ span .text-danger{
     font-weight: 300;
     font-family: gothambold;
     border: 0;
-}
-
-
-
-.btn-strainer:hover{
+    width: 100%;
+  }
+  
+  .btn-strainer:hover {
     animation: shadow-pulse 1000ms 1;
     background-color: #20e2d7;
     color: #434343;
-}
-
-.errorlist{
-    color: red;
-    font-size:larger;
-}
-
-/*
-@media only screen and (min-width: 768px) {
-
-    nav.top-nav .menu-label {
-        display: none;
-    }
-}
-  */
-@keyframes shadow-pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(32, 226, 215, 0.6);
-    }
-    100% {
-      box-shadow: 0 0 8px 16px rgba(32, 226, 215, 0);
-    }
   }
-
-
-  .text-center{
-    color: white;
-}
-
-/* El estilo "registro" es para el formulario de registro de usuarios
-    El texto debe estar centrado y optimizado para celulares.
-*/
-.registro{
+  
+  .errorlist {
+    color: red;
+    font-size: larger;
+  }
+  
+  .registro {
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-}
-
-.help-text {
+  }
+  
+  .help-text {
     display: block;
-    margin-top: 5px; /* Ajusta el margen según tus necesidades */
-    color: gray; /* Puedes cambiar el color según tu preferencia */
-    font-size: 12px; /* Ajusta el tamaño según tus necesidades */
+    margin-top: 5px;
+    color: gray;
+    font-size: 12px;
     text-align: left;
-}
-
-
-.form-row {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px; /* Espacio entre las filas, ajusta según tus necesidades */
-}
-
-.label {
-    width: 200px; /* Ancho de la columna del texto, ajusta según tus necesidades */
-}
-
-.field {
-    flex: 1; /* Ocupa el espacio restante en la fila */
+  }
+  
+  .form-row {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinea el contenido a la izquierda */
-}
-
-.field > * {
-    margin-bottom: 5px; /* Espacio entre los elementos dentro del campo */
-}
-
-
-.form-group {
+    margin-bottom: 10px;
+  }
+  
+  .field {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .field > * {
+    margin-bottom: 5px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px; /* Espacio entre las filas, ajusta según tus necesidades */
-}
-
-.label {
-    width: 200px; /* Ancho de la columna del texto, ajusta según tus necesidades */
+    margin-bottom: 10px;
+  }
+  
+  .label {
     text-align: right;
-    margin-right: 10px; /* Espacio entre el texto y el campo, ajusta según tus necesidades */
-}
-
-.field {
-    flex: 1; /* Ocupa el espacio restante en la fila */
+    margin-right: 10px;
+  }
+  
+  .field {
     text-align: left;
+  }
+  
+  .error {
+    color: red;
+  }
+
+
+  /* Estilos adicionales para dispositivos móviles */
+
+@media only screen and (max-width: 767px) {
+  .contenedor {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .card {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .label {
+    text-align: left;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .field {
+    align-items: stretch;
+  }
+
+  .field > * {
+    margin-bottom: 10px;
+  }
 }
 
-.error {
-    color: red; /* Puedes cambiar el color según tu preferencia */
-}
 
-
-
-
-
+/* Estilos específicos para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    .contenedor {
+      width: 100%;
+    }
+  
+    .form-group {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  
+    .label {
+      width: auto;
+      text-align: left;
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  
+    .field {
+      text-align: left;
+    }
+  
+    input,
+    textarea {
+      width: 100%;
+    }
+  }
