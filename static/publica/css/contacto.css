@@ -68,6 +68,7 @@ main{
     font-weight: 900;
   }
   
+
   .btn-strainer {
     background-color: #f0a046;
     padding: 8px 15px;
@@ -78,8 +79,11 @@ main{
     font-weight: 300;
     font-family: gothambold;
     border: 0;
-    width: 100%;
+    width: auto; /* Cambia el ancho del botón a "auto" */
+    margin: 15px auto; /* Aplica un margen automático para centrarlo horizontalmente */
   }
+
+
   
   .btn-strainer:hover {
     animation: shadow-pulse 1000ms 1;
