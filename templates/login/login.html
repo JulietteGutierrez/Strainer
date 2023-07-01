@@ -41,8 +41,17 @@
             </div>
         </div>
         <input type="submit" class="btn btn-success" value="Login">
-    </div>
+        </div>
+
 </form>
+
+<div class="contenedor">
+    <form method="post" action= {% url 'Autenticacion' %}> <!-- Agrega el atributo "action" con la URL de la página de registro -->
+      {% csrf_token %}
+      <button type="submit" class="btn btn-warning ">No estas registrado? Registrate! </button> <!-- Cambia la clase del botón a "btn btn-registro" y el valor a "Registrarse" -->
+        
+    </form>
+</div>
 
 
 {% endblock contenido %}

@@ -5,12 +5,14 @@ main{
 }
 */
 .contenedor{
-    width: 70%;
+    width: 100%;
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
+
 .card{
     padding: 30px 40px;
     margin-top: 60px;
@@ -177,6 +179,12 @@ span .text-danger{
 }
 
 
+  /* Estilos para pantallas más grandes, como computadoras */
+.btn {
+    width: 350px; /* Ajusta el ancho según tus necesidades */
+    margin: 15px 0px;
+}
+
 /* Estilos específicos para dispositivos móviles */
 @media screen and (max-width: 767px) {
     .contenedor {
@@ -204,4 +212,8 @@ span .text-danger{
     textarea {
       width: 100%;
     }
+    /* 
+    .btn {
+    width: 100%; /* Ancho completo en dispositivos móviles 
+    margin: 15px auto;*/
   }
